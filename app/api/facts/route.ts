@@ -1,4 +1,3 @@
-// app/api/facts.route.ts
 import type { NextApiRequest } from 'next';
 import { NextResponse } from 'next/server';
 import axios from 'axios';

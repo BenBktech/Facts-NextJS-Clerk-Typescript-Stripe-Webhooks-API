@@ -1,5 +1,6 @@
 'use client'
 import Facts from "@/components/Facts";
+import RefetchButton from "@/components/RefetchButton";
 
 import useFetch from "@/hook/useFetch";
 
@@ -10,6 +11,9 @@ export default function Home() {
   console.log(data);
 
   return (
-    <Facts allFacts={data} />
+    <>
+      <Facts allFacts={data} />
+      <RefetchButton refetch={refetch} />
+    </>
   );
 }

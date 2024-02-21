@@ -3,8 +3,6 @@ import { League_Spartan } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-import useFetch from "@/hook/useFetch";
-
 const LSpartan = League_Spartan({ 
   subsets: ["latin"],
   weight: ['400', '500', '600', '700'],

@@ -82,3 +82,7 @@
 .fact {
   @apply bg-slate-50 w-full lg:w-[30%] mb-10;
 }
+
+.refetch-button {
+  @apply flex justify-center;
+}
