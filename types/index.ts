@@ -1,7 +1,21 @@
-declare type Fact = {
+import { AxiosError } from "axios";
+
+export interface Fact {
     fact: string;
 }
 
-declare type AllFactsProps = {
-    allFacts: Array<Fact>;
+export interface AllFactsProps {
+    allFacts: Fact[];
 }
+
+export interface UseFetchReturn {
+    data: Fact[];
+    isLoading: boolean;
+    error: AxiosError | null;
+    refetch: RefetchProps;
+};  
+
+export interface RefetchProps {
+    refetch: () => void;
+}
+

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import axios, { AxiosError } from "axios";
+import { Fact } from "@/types";
 
 const useFetch = () => {
     const [data, setData] = useState<Fact[]>([]);
@@ -15,8 +16,15 @@ const useFetch = () => {
             setError(null);
         } 
         catch (error) {
-            setError(error);
-        } 
+            if (axios.isAxiosError(error)) {
+                // Ici, on est sûr que err est une instance de AxiosError
+                setError(error);
+            } else {
+                // Si ce n'est pas une AxiosError, on peut choisir de définir une nouvelle erreur
+                // ou de passer null à setError, selon la gestion d'erreur que vous souhaitez implémenter
+                setError(new AxiosError("An unexpected error occurred")); 
+            }
+        }
         finally {
             setIsLoading(false);
         }

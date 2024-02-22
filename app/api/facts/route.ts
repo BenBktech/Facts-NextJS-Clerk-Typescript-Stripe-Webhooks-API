@@ -24,7 +24,7 @@ export async function GET(req: NextApiRequest) {
     } catch (error) {
         console.error(error);
         // Retournez une NextResponse avec un message d'erreur en cas d'échec
-        return new NextResponse(JSON.stringify({ message: 'Erreur lors de la récupération des faits' }), {
+        return new NextResponse(JSON.stringify({ message: 'Erreur lors de la récupération des factss' }), {
             status: 500, // Statut HTTP pour une erreur serveur
             headers: {
                 'Content-Type': 'application/json', // Spécifiez le type de contenu de la réponse
